@@ -1,7 +1,7 @@
-import ICar from '../Interfaces/ICar';
+import IMotorcycle from '../Interfaces/IMotorcycle';
 import AbstractODM from './AbstractODM';
 
-class CarModel extends AbstractODM<ICar> {
+class MotorcycleModel extends AbstractODM<IMotorcycle> {
   constructor() {
     const options = {
       model: {
@@ -21,17 +21,16 @@ class CarModel extends AbstractODM<ICar> {
         type: Number,
         required: true,
       },
-      doorsQty: {
-        type: Number,
+      category: {
+        type: String,
         required: true,
       },
-      seatsQty: {
-        type: Number,
-        required: true,
+      engineCapacity: {
+        type: Number, 
+        equired: true,
       },
     };
-    super(options, 'Car');
+    super(options, 'Motorcycle');
   }
 }
-
-export default CarModel;
+export default MotorcycleModel;
