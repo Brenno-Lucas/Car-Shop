@@ -34,7 +34,7 @@ class MotorcycleController {
 
   async getAllMotorcycles() {
     try {
-      const result = await this.service.getAllMotors();
+      const result = await this.service.getAllMotorcycles();
       return this.res.status(200).json(result);
     } catch (error) {
       this.next(error);
@@ -44,7 +44,7 @@ class MotorcycleController {
   async getMotorcycleById() {
     try {
       const { id } = this.req.params;
-      const result = await this.service.getMotorsById(id);
+      const result = await this.service.getMotorcyclesById(id);
       return this.res.status(200).json(result);
     } catch (error) {
       return this.res.status(404).json({ message: (error as Error).message });

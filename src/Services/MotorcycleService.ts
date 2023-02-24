@@ -19,13 +19,13 @@ class MotorcycleService {
     return this.createMotorcycleDomain(result);
   }
 
-  async getAllMotors() {
+  async getAllMotorcycles() {
     const result = await this.model.find();
     return result.map((motor) => this.createMotorcycleDomain(motor));
   }
 
-  async getMotorsById(id: string) {
-    const result = await this.model.findOne({ _id: id });
+  async getMotorcyclesById(id: string) {
+    const result = await this.model.findById({ _id: id });
     if (!result) throw new Error('Motorcycle not found');
     return this.createMotorcycleDomain(result);
   }
